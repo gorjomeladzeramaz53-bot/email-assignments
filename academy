@@ -1,0 +1,30 @@
+name = input("რამაზ")
+surname = input("ღორჯომელაძე")
+platform = input("gmail.com")
+
+
+clean_name = name.strip().lower()
+clean_surname = surname.strip().lower()
+clean_platform = platform.strip().lower()
+
+
+name_prefix = clean_name[:2]
+
+email = f"{name_prefix}{clean_surname}@{clean_platform}"
+
+
+print("\n")
+print(f"{email}")
+print("\n\nტექსტი: თქვენი ელფოსტა წარმატებით შეიქმნა!")
+
+import re
+
+text = "ჩვენი გუნდის წევრები არიან: saba.ananidze@istep.com, მეგობარი dima123@gmail.com და კიდევ ერთი ტექსტური მისამართი test_user@yahoo.com"
+
+
+email_pattern = r'[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+'
+emails_list = re.findall(email_pattern, text)
+
+result_string = "+".join(emails_list)
+
+print(result_string)
